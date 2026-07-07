@@ -1,11 +1,12 @@
 import os 
 import json
+file = os.path.join(os.path.dirname(__file__),'tasks.json')
 def save_tasks(tasks):
-    with open('tasks.json','w') as f:
+    with open(file,'w') as f:
         json.dump(tasks,f)
 def load_tasks():
     if os.path.exists('tasks.json'):
-        with open('tasks.json') as f:
+        with open(file) as f:
             t=json.load(f)
             return t 
     else:
